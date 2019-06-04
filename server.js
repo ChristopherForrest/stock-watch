@@ -2,8 +2,7 @@ const http = require('http');
 const port = 3000;
 const axios = require('axios');
 const stocks = ['AMZN', 'MSFT', 'AAPL', 'GOOGL','TSLA']
-var player = require('play-sound')(opts = {})
-var play = require('play')
+
 
 
 const requestHandler  = (request, response) => {
@@ -27,7 +26,6 @@ server.listen(port,(err) => {
 function getCurrentPrice(stocks) {
 
     timeStamp();
-    play.sound('./media/notification.mp3');
 
     for(i = 0; i < stocks.length; i++) {
         axios.get(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stocks[i]}&apikey=`)
