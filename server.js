@@ -26,6 +26,7 @@ server.listen(port,(err) => {
 function getCurrentPrice(stocks) {
 
     timeStamp();
+    console.log('\u0007');
 
     for(i = 0; i < stocks.length; i++) {
         axios.get(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stocks[i]}&apikey=`)
